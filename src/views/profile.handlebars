@@ -1,0 +1,23 @@
+<h1>Profile</h1>
+<p class="profileUser">Name: {{user.firstName}}</p>
+<p class="profileUser">Last Name: {{user.lastName}}</p>
+<p class="profileUser">Rol: {{user.rol}}</p>
+
+{{#if users}}
+    <a class="profileUser" href="/products">Products</a>
+    <a class="profileUser" href="/chat">Chat</a>
+    <a class="profileUser" href="/api/sessions/logout">Logout</a>
+{{/if}}
+
+{{#if premium}}
+    <a class="profileUser" href="/chat">Chat</a>
+    <a class="profileUser" href="/products">Products</a>
+    <a class="profileUser" href="/realtimeproducts">Change products</a>
+    <a class="profileUser" href="/api/sessions/logout">Logout</a>
+{{/if}}
+
+{{#if admins}}
+    <a class="profileUser" href="/realtimeproducts">Change products</a>
+    <a class="profileUser" href="/changeRol-deleteUser">Delete user / Change rol</a>
+    <a class="profileUser" href="/api/sessions/logout">Logout</a>
+{{/if}}

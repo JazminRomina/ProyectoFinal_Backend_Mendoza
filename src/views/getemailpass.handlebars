@@ -1,0 +1,11 @@
+<h1>Recover Password</h1>
+
+<form action="/api/users/requestPasswordReset" method="POST">
+    <label for="email"> Email: </label>
+    <input type="text" name="email" id="email" required>
+    <button type="submit"> Send email </button>
+</form>
+
+{{#if error}}
+        <p> {{error}} </p>
+{{/if}}

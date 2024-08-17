@@ -1,0 +1,47 @@
+<h1 class="pRealTime">Only an Admin can get the access here!</h1>
+
+<div class="sessionWelcomeProducts" >
+    <a class="sessionWelcomeProductsLink" href="/profile">Profile</a>
+</div>
+
+<h2>Change users to Premium</h2>
+<p>This only works if the user has the necesary documents.</p>
+
+<div>
+    <div class="usersViewChange">
+        <strong><p>Nombre</p></strong>
+        <strong><p>Apellido</p></strong>
+        <strong><p>Rol</p></strong>
+        <strong><p>Email</p></strong>
+    </div>
+    {{#each users}}
+        <div class="usersViewChange">
+            <p>{{this.first_name}}</p>
+            <p>{{this.last_name}}</p>
+            <p>{{this.rol}}</p>
+            <p>{{this.email}}</p>
+            <form class="change-role-form" data-id="{{this._id}}">
+                <button type="submit">Change Role</button>
+            </form>
+        </div>
+    {{/each}}
+</div>
+
+<h2>Delete Users</h2>
+<p>Select one of them to delete.</p>
+<div>
+    {{#each users}}
+        <div class="usersViewChange">
+            <p>{{this.first_name}}</p>
+            <p>{{this.last_name}}</p>
+            <p>{{this.rol}}</p>
+            <p>{{this.email}}</p>
+            <form class="delete-user" data-id="{{this._id}}">
+                <button type="submit">Delete User</button>
+            </form>
+        </div>
+    {{/each}}
+</div>
+
+<script src="js/changeRol.js"></script>
+<script src="js/deleteUser.js"></script>
